@@ -1,0 +1,87 @@
+<!--
+  DOCTYPE tells the browser which version of HTML
+  this document is using. HTML 5 in this case.
+  Disclaimer: This is not a tag.
+-->
+<!DOCTYPE html>
+
+<!--
+  The html tag is always the root or common ancestor
+  of all html documents. It will contain all other tags
+  in your page.
+-->
+<html>
+  <!--
+    The head contains meta information about your html document.
+    Tags inside are not displayed browser. It's also used
+    to load CSS & JS files.
+  -->
+  <head>
+    <!--
+      Sets the browser tab name and gives a title to the page.
+    -->
+    <title>HTML & CSS: Basics Demo</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <!--
+    The body is used to hold all tags that are rendered
+    in the browser window. This is the content the user
+    can see.
+  -->
+  <body>
+    <header>
+      <!--
+        header is semantic tag that acts as a block
+        used to describe content at the top of the page.
+      -->
+      <nav>
+        <!--
+          nav is a semantic tag that describe content used to
+          navigate across multiple pages.
+        -->
+        <a href="http://www.nyan.cat">Nyan Cat</a>
+        <a href="">Boards</a>
+        <a href="">Profile</a>
+
+        <form action="http://www.nyan.cat">
+          <input type="search" name="query" />
+          <input type="submit"  value="Search" />
+        </form>
+      </nav>
+    </header>
+
+    <main>
+      <section id="starred-boards">
+        <h1>Starred Boards</h1>
+        <ul>
+          <li>Management</li>
+          <li
+            style="background-image: url(https://images.pexels.com/photos/566641/pexels-photo-566641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);"
+          >
+            Learning to Hack
+          </li>
+        </ul>
+      </section>
+
+      <section id="personal-boards">
+        <h1>Personal Boards</h1>
+        <ul>
+          <li>Management</li>
+          <li>
+            <div>Learning to Hack</div>
+            <img
+            width="200px"
+            src="https://images.pexels.com/photos/566641/pexels-photo-566641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+          </li>
+          <li>
+            <div>My Ideas</div>
+            <img 
+            width="200px"
+            src="https://images.pexels.com/photos/602794/pexels-photo-602794.jpeg?auto=compress&cs=tinysrgb&h=350">
+          </li>
+          <li>Create New Board...</li>
+        </ul>  
+      </section>
+    </main>
+  </body>
+</html>

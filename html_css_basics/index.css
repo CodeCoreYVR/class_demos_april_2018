@@ -1,0 +1,92 @@
+/* How do you select a link that's been visited? */
+
+a:visited {
+  display: initial;
+}
+
+/* How do you select a div with a cursor on top? */
+
+/* div:hover {
+  display: initial;
+} */
+
+/* How do you select an element with the
+attribute data-content? */
+
+[data-content] {
+  display: initial;
+}
+
+/* How do you select all children elements of ul, but the last? */
+
+/* ul > *:not(:last-child) {
+  display: inline;
+} */
+
+/*
+
+100vw (viewport width)
+100vh (viewport height)
+100vmin (viewport minimum)
+100vmax (viewport maximum)
+
+*/
+
+html {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+body * {
+  font-family: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+input {
+  font-size: inherit;
+}
+
+header {
+  background-color: steelblue;
+  padding: 10px;
+}
+
+main {
+  padding: 10px;
+}
+
+nav {
+  color: white;
+}
+
+nav a {
+  color: inherit;
+}
+
+nav form {
+  display: inline-block;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+ul > li {
+  height: 75px;
+  background-color: cadetblue;
+  border-radius: 7px;
+
+  padding: 5px;
+  /* margin: vertical | horizontal */
+  /* margin: top | right | bottom | left */
+  margin: 10px 0;
+
+  color: white;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
