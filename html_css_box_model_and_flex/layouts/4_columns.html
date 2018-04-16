@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      * {
+        /*
+          box-sizing is used to determine how the full height and
+          width of element is calculated:
+            - content-box ->
+              height/width == actual content size
+              height/width + padding + border + margin == full size
+            - border-box ->
+              height/width - padding - border =  actual content size
+              height/width + margin == full size
+        */
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      main {
+        height: 100vh;
+        display: flex;
+        padding: 20px 10px;
+      }
+
+      main > div {
+        flex-grow: 1;
+        min-height: 20px;
+        min-width: 20px;
+        margin: 0 10px;
+        border-radius: 5px;
+        background-color: darkseagreen;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <main>
+      <div></div><div></div><div></div><div></div>
+    </main>
+  </body>
+</html>

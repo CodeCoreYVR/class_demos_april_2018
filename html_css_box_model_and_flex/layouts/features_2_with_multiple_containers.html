@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Features 2</title>
+    <style>
+      /* Better Defaults */
+      body {
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Main styles */
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100vh;
+        padding: 10px;
+      }
+
+      .row {
+        display: flex;
+        width: 100%;
+        padding: 10px
+      }
+
+      .row > div {
+        min-width: 30px;
+        min-height: 30px;
+        background-color: gainsboro;
+
+        flex-grow: 1;
+      }
+
+      .row > div:not(:last-child) {
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="row">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="row">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </main>
+  </body>
+</html>

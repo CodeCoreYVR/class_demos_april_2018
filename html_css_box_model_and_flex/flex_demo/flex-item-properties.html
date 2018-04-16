@@ -71,41 +71,60 @@
 
     <h3>order</h3>
     <pre><strong>order:</strong> [any integer];</pre>
+    <!--
+      The default value of `order` is 0.
+    -->
     <div class="flex-me">
-      <div class="num"></div>
-      <div class="num one"></div>
+      <div class="num" style="order: 2;"></div>
+      <div class="num one" style="order: 1;"></div>
       <div class="num two"></div>
       <div class="num three"></div>
-      <div class="num four"></div>
+      <div class="num four" style="order: -1;"></div>
       <div class="num five"></div>
     </div>
 
     <h3>flex-grow</h3>
     <pre><strong>flex-grow:</strong> [any integer];</pre>
+    <!--
+      The default value for `flex-grow` is 0.
+      This property is controls how a flex-item's content
+      grows to occupy white space that is available
+      in a flex-container. A flex-item with a `flex-grow` of
+      2 will take up 2 times more white space than a `flex-item`
+      with flex-grow of 1.
+    -->
     <div class="flex-me">
-      <div class="num"></div>
+      <div class="num" style="flex-grow: 1;"></div>
       <div class="num one"></div>
       <div class="num two"></div>
       <div class="num three"></div>
       <div class="num four"></div>
-      <div class="num five"></div>
+      <div class="num five" style="flex-grow: 5;"></div>
     </div>
 
     <h3>flex-shrink</h3>
     <pre><strong>flex-shrink:</strong> [any integer];</pre>
+    <!-- The default value of `flex-shrink` is 1. -->
     <div class="flex-me">
-      <div class="num"></div>
+      <div class="num" style="flex-shrink: 4;"></div>
       <div class="num one"></div>
       <div class="num two"></div>
       <div class="num three"></div>
       <div class="num four"></div>
-      <div class="num five"></div>
+      <div class="num five" style="flex-shrink: 0;"></div>
     </div>
 
     <h3>flex-basis</h3>
     <pre><strong>flex-basis:</strong> [any unit] | 0 | auto;</pre>
+    <!--
+      The `flex-basis` is to control a dimension of a flex-item
+      based on the direction of the flex line. If the flex-container
+      is set to row, the flex-basis controls the width. If the
+      flex-container is set to column, the flex-basis controls the
+      height. This property only applies to flex-items.
+    -->
     <div class="flex-me">
-      <div class="num"></div>
+      <div class="num" style="flex-basis: 300px;"></div>
       <div class="num one"></div>
       <div class="num two"></div>
       <div class="num three"></div>
@@ -117,11 +136,11 @@
     <pre><strong>align-self:</strong> stretch | flex-start | flex-end | center | baseline;</pre>
     <div class="flex-me">
       <div class="num"></div>
-      <div class="num one"></div>
-      <div class="num two"></div>
-      <div class="num three"></div>
-      <div class="num four"></div>
-      <div class="num five"></div>
+      <div class="num one" style="align-self: flex-start;"></div>
+      <div class="num two" style="align-self: flex-end;"></div>
+      <div class="num three" style="align-self: center;"></div>
+      <div class="num four" style="align-self: baseline;"></div>
+      <div class="num five" style="align-self: baseline;"></div>
     </div>
   </body>
 </html>
