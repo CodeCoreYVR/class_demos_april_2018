@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Media Queries Demo</title>
+  <style>
+    /* RESETS */
+    html {
+      font-family: Helvetica, sans-serif;
+    }
+
+    * {
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    :root {
+      --margin: 10px;
+    }
+
+    /* MY STYLES */
+    header nav {
+      padding: 0 calc(var(--margin) * 2);
+      background-color: black;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      padding: var(--margin);
+    }
+
+    main > div {
+      min-height: 150px;
+      width: calc(100% - 2 * var(--margin));
+      margin: var(--margin);
+      background-color: goldenrod;
+    }
+
+    main > div:nth-child(1) {
+      height: calc(150px * 2);
+    }
+
+    @media (min-width: 576px) and (max-width: 767px) {
+      main > div {
+        background-color: dodgerblue;
+        width: calc(50% - 2 * var(--margin));
+      }
+
+      main > div:first-child {
+        width: calc(100% - 2 * var(--margin));
+      }
+    }
+
+    @media (min-width: 768px) {
+      main > div {
+        background-color: darkturquoise;
+        width: calc(100% / 3 - 2 * var(--margin));
+      }
+
+      main > div:first-child {
+        width: calc(100% * 2/3 - 2 * var(--margin));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h2>🐢</h2>
+    </nav>
+  </header>
+  
+  <main>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  </main>
+</body>
+</html>
