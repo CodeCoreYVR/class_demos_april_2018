@@ -1,5 +1,9 @@
 const express = require("express");
+const logger = require("morgan");
+
 const app = express();
+
+app.use(logger("dev"));
 
 // URL http://localhost:454545/hello_world
 // scheme   | host     | port| path
