@@ -1,39 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fotorol</title>
-  </head>
-  <body>
+<%- include("./partials/header") %>
 
-    <%# The following a if to conditionally display some html %>
-    <% if (name && message) { %>
-    <%# The following renders the value of "name" as HTML text %>
-      <h3>Hi <%= name %>!</h3>
-      <p>
-        Thank you for your message:
-      </p>
-      <blockquote>
-        <%= message %>
-      </blockquote>
-    <% } %>
+<%# The following a if to conditionally display some html %>
+<% if (name && message) { %>
+<%# The following renders the value of "name" as HTML text %>
+  <h3>Hi <%= name %>!</h3>
+  <p>
+    Thank you for your message:
+  </p>
+  <blockquote>
+    <%= message %>
+  </blockquote>
+<% } %>
 
-    <form action="/contact_us">
-      <div>
-        <label for="name">Name</label> <br />
-        <input type="text" name="name" id="name" />
-      </div>
+<form action="/contact_us">
+  <div>
+    <label for="name">Name</label> <br />
+    <input type="text" name="name" id="name" />
+  </div>
 
-      <div>
-        <label for="message">Message</label> <br />
-        <textarea cols="60" rows="8" name="message" id="message"></textarea>
-      </div>
+  <div>
+    <label for="message">Message</label> <br />
+    <textarea cols="60" rows="8" name="message" id="message"></textarea>
+  </div>
 
-      <div>
-        <input type="submit" value="Submit"/>
-      </div>
-    </form>
-  </body>
-</html>
+  <div>
+    <input type="submit" value="Submit"/>
+  </div>
+</form>
+
+<%- include("./partials/footer") %>
