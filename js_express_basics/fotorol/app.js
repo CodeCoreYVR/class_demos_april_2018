@@ -1,5 +1,6 @@
 const express = require("express");
 const logger = require("morgan");
+const fs = require("fs");
 
 const app = express();
 
@@ -63,6 +64,21 @@ app.get("/contact_us", (request, response) => {
   const message = request.query.message;
 
   response.render("contact_us", { name: name, message: message });
+});
+
+app.get("/things", (request, response) => {
+  fs.readFile("things", "utf8", (error, data) => {
+    const lines = data.split("\n");
+
+    // To pass variables to templates, give
+    // response.render an object as a second argument.
+    // All key-values from that object will act as
+    // local variables inside of the rendered template.
+
+    // Meaning that for the line below, "lines" will become
+    // a variable in the "things" template.
+    response.render("things", { lines: lines });
+  });
 });
 
 const PORT = 4545;
