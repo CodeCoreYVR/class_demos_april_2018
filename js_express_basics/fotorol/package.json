@@ -1,0 +1,20 @@
+{
+  "name": "fotorol",
+  "version": "0.0.0",
+  "description": "Instagram clone",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "instagram",
+    "express",
+    "pics",
+    "server"
+  ],
+  "author": "Steve Godin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
