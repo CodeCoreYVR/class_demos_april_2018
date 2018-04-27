@@ -1,0 +1,12 @@
+html {
+  font-family: Helvetica, sans-serif;
+}
+
+* {
+  font-family: inherit;
+}
+
+.home-page-img {
+  height: 50vh;
+  object-fit: cover;
+}

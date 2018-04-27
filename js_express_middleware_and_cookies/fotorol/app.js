@@ -1,11 +1,24 @@
 const express = require("express");
 const logger = require("morgan");
 const fs = require("fs");
+const path = require("path");
 
 const app = express();
 
 app.set("view engine", "ejs");
+
+// MIDDLEWARE
+// HTTP Request Logger
 app.use(logger("dev"));
+// Static Assets
+// Use path.join to combine strings into directory paths.
+// Example: path.join("fotorol", "public") -> "fotorol/public"
+
+// __dirname is global variable useable in file run by Node.
+// It gives the full path, beginning from the root of your
+// OS, to the file where __dirname is being used.
+console.log("Full path to app.js:", __dirname);
+app.use(express.static(path.join(__dirname, "public")));
 
 // URL http://localhost:454545/hello_world?name=steve&message=hello+there
 // scheme   | host     | port| path       | query string
