@@ -1,0 +1,12 @@
+<%- include("./partials/header") %>
+
+<h1>Things</h1>
+
+<ol>
+  <% for (let line of lines) { %>
+    <li><%= line %></li>
+  <% } %>
+</ol>
+
+
+<%- include("./partials/footer") %>
