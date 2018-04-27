@@ -21,8 +21,30 @@ app.use(logger("dev"));
 console.log("Full path to app.js:", __dirname);
 app.use(express.static(path.join(__dirname, "public")));
 
+// Body Parser
+
+app.use(express.urlencoded({ extended: true }));
+
 // Cookie Parser
 app.use(cookieParser());
+
+app.use((request, response, next) => {
+  const username = request.cookies.username;
+
+  response.locals.username = "";
+  if (username) {
+    // All properties of "response.locals" are available
+    // as variables inside all templates that Express
+    // renders
+    response.locals.username = username;
+    console.log(`🤓 User's username is ${username}`);
+  }
+
+  next(); // This tells Express that this middleware is done.
+  // If next is not called or the response isn't ended,
+  // the client (i.e. browser) will wait forever.
+  // Express will then call the next middleware in order.
+});
 
 // URL http://localhost:454545/hello_world?name=steve&message=hello+there
 // scheme   | host     | port| path       | query string
@@ -60,6 +82,10 @@ app.get("/hello_world", (request, response) => {
 });
 
 app.get("/", (request, response) => {
+  // Read cookies coming from the client with the
+  // "request.cookies" property. Cookies are parsed
+  // into an object.
+  console.log(request.cookies);
   // `response.render` is used to render the contents of a
   // template file located in the "views" directory.
   // As a first argument, pass the path to the file
@@ -96,6 +122,36 @@ app.get("/things", (request, response) => {
     // a variable in the "things" template.
     response.render("things", { lines: lines });
   });
+});
+
+// The two following routes match on the same path
+// but use two different http verbs (methods).
+// - GET corresponds to reads. We use to show information
+//   to a client.
+// - POST corresponds to writes. We use it create things
+//   for a client such as cookies, new rows a db, files, etc.
+app.get("/sign_in", (request, response) => {
+  response.render("sign_in");
+});
+
+const COOKIE_MAX_AGE = 1000 * 60 * 60 * 24 * 7;
+app.post("/sign_in", (request, response) => {
+  // When a format submits its data with a POST, its data
+  // will not be available in the "request.query". Instead,
+  // you all have use Express' "express.urlencoded()" middleware
+  // which will parse the form data into "request.body".
+  console.log(request.body);
+
+  // Use "response.cookie()" method which was added by
+  // the "cookie-parser" middleware to create a cookie.
+  // The first arg. is the name of the cookie, the second
+  // is the value for the cookie and the last (optional)
+  // is object configuring the cookie.
+  response.cookie("username", request.body.username, {
+    maxAge: COOKIE_MAX_AGE
+  });
+
+  response.redirect("/");
 });
 
 const PORT = 4545;

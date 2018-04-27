@@ -27,11 +27,19 @@
           <a class="nav-link" href="/things">Things</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/hello_world">Hello World</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/contact_us">Contact Us</a>
         </li>
+        <% if (username) { %> 
+          <span class="navbar-text text-dark ml-auto">
+            Hello, <%= username %>!
+          </span>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/sign_in">Sign In</a>
+          </li>
+        <% } %>
       </ul>
     </div>
   </nav>
+
+  <div class="container">
