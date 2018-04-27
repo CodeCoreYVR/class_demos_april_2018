@@ -1,5 +1,6 @@
 const express = require("express");
 const logger = require("morgan");
+const cookieParser = require("cookie-parser");
 const fs = require("fs");
 const path = require("path");
 
@@ -19,6 +20,9 @@ app.use(logger("dev"));
 // OS, to the file where __dirname is being used.
 console.log("Full path to app.js:", __dirname);
 app.use(express.static(path.join(__dirname, "public")));
+
+// Cookie Parser
+app.use(cookieParser());
 
 // URL http://localhost:454545/hello_world?name=steve&message=hello+there
 // scheme   | host     | port| path       | query string
