@@ -28,6 +28,12 @@ app.use(express.urlencoded({ extended: true }));
 // Cookie Parser
 app.use(cookieParser());
 
+// Custom Middleware
+
+// A middleware is function that takes three arguments:
+// request, response and next. We pass this function to
+// the "app.use()" method. Inside the middleware, we
+// call "next()" when its done.
 app.use((request, response, next) => {
   const username = request.cookies.username;
 
@@ -151,6 +157,11 @@ app.post("/sign_in", (request, response) => {
     maxAge: COOKIE_MAX_AGE
   });
 
+  response.redirect("/");
+});
+
+app.post("/sign_out", (request, response) => {
+  response.clearCookie("username");
   response.redirect("/");
 });
 

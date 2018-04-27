@@ -30,9 +30,18 @@
           <a class="nav-link" href="/contact_us">Contact Us</a>
         </li>
         <% if (username) { %> 
-          <span class="navbar-text text-dark ml-auto">
+          <span class="navbar-text text-dark ml-auto mr-2">
             Hello, <%= username %>!
           </span>
+          <li class="nav-item">
+            <form method="post" action="/sign_out">
+              <input
+                type="submit"
+                class="btn btn-dark"
+                value="Sign Out"
+              />
+            </form>
+          </li>
         <% } else { %>
           <li class="nav-item">
             <a class="nav-link" href="/sign_in">Sign In</a>
