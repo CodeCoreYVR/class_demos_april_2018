@@ -119,6 +119,17 @@ app.get("/things", (request, response) => {
   fs.readFile("things", "utf8", (error, data) => {
     const lines = data.split("\n");
 
+    // The "cookie-parser" allows you to store
+    // any kind of javascript objects including arrays.
+    // They will be stored as string, but when read
+    // again with "request.cookies" they will be turned
+    // back into the original objects.
+    response.cookie("things", lines);
+
+    // When working with cookies, they can not be mutated. You
+    // will have to re-write them with "response.cookie()"
+    // everytime you to change them.
+
     // To pass variables to templates, give
     // response.render an object as a second argument.
     // All key-values from that object will act as
