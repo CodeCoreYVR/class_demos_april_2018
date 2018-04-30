@@ -6,6 +6,18 @@ const router = express.Router();
 // if exists.
 const knex = require("../db");
 
+// Posts#index URL: /posts METHOD: GET
+router.get("/", (req, res) => {
+  knex
+    .select("*")
+    .from("posts")
+    .orderBy("createAt", "DESC")
+    .then(posts => {
+      // res.send(posts);
+      res.render("posts/index", { posts: posts });
+    });
+});
+
 // Posts#new URL: /posts/new METHOD: GET
 router.get("/new", (req, res) => {
   res.render("posts/new");
