@@ -1,0 +1,17 @@
+<%- include("./partials/header") %>
+
+<form method="POST" action="/sign_in">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input
+      class="form-control"
+      type="text"
+      name="username"
+      id="username"
+    />
+  </div>
+
+  <input class="btn btn-primary" type="submit" value="Sign In" />
+</form>
+
+<%- include("./partials/footer") %>
