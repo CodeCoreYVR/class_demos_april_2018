@@ -5,6 +5,12 @@ module.exports = {
     client: "pg",
     connection: {
       database: "fotorol_dev"
+      // For linux users, you must set a username and password.
+      // To change your user password, use psql:
+      // & psql
+      // sg=# ALTER USER username PASSWORD 'supersecret';
+      // username: "sg",
+      // password: "supersecret"
     },
     migrations: {
       tableName: "knex_migrations",
