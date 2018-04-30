@@ -8,7 +8,12 @@
     "db:create": "createdb --echo fotorol_dev",
     "db:drop": "dropdb --echo fotorol_dev"
   },
-  "keywords": ["instagram", "express", "pics", "server"],
+  "keywords": [
+    "instagram",
+    "express",
+    "pics",
+    "server"
+  ],
   "author": "Steve Godin",
   "license": "ISC",
   "dependencies": {

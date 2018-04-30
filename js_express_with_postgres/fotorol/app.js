@@ -5,6 +5,7 @@ const path = require("path");
 
 // ROUTER REQUIRES
 const welcomeRouter = require("./routes/welcome");
+const postsRouter = require("./routes/posts");
 
 const app = express();
 
@@ -76,6 +77,7 @@ app.use((request, response, next) => {
 // router will be fixed to all route paths defined inside
 // the router.
 app.use("/", welcomeRouter);
+app.use("/posts", postsRouter);
 
 const PORT = 4545;
 const DOMAIN = "localhost";
