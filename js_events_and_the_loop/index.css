@@ -83,6 +83,9 @@ html * {
   flex-flow: column;
   justify-content: flex-end;
   align-items: center;
+
+  /* transition: property-name | duration (in seconds) | delay (in seconds) */
+  transition: transform 0.25s 0s, filter 1s 0s;
 }
 
 .doggo > h1 {
@@ -99,20 +102,50 @@ html * {
   filter: grayscale(1);
 }
 
+.doggo.inverted {
+  filter: invert(1);
+}
+
+.doggo.flipped {
+  transform: rotate(180deg);
+}
+
+.doggo.greyed {
+  filter: grayscale(1);
+}
+
 #applicant-preview {
   border: solid 5px gainsboro;
   background-color: grey;
 }
 
-#toxic-tim { background-image: url(./images/toxic_tim.jpg); }
-#bumble-bertha { background-image: url(./images/bumble_bertha.jpg); }
-#nina-the-ninja { background-image: url(./images/nina_the_ninja.jpg); }
-#larry-the-lion { background-image: url(./images/larry_the_lion.jpg); }
-#inbread-dog { background-image: url(./images/inbread_dog.jpg); }
-#four-fists-larry { background-image: url(./images/four_fists_phil.jpg); }
-#knight-nicholas { background-image: url(./images/knight_nicholas.jpg); }
-#archmage-alfie { background-image: url(./images/archmage_alfie.jpg); }
-#moneybags-michael { background-image: url(./images/moneybags_michael.jpg); }
+#toxic-tim {
+  background-image: url(./images/toxic_tim.jpg);
+}
+#bumble-bertha {
+  background-image: url(./images/bumble_bertha.jpg);
+}
+#nina-the-ninja {
+  background-image: url(./images/nina_the_ninja.jpg);
+}
+#larry-the-lion {
+  background-image: url(./images/larry_the_lion.jpg);
+}
+#inbread-dog {
+  background-image: url(./images/inbread_dog.jpg);
+}
+#four-fists-larry {
+  background-image: url(./images/four_fists_phil.jpg);
+}
+#knight-nicholas {
+  background-image: url(./images/knight_nicholas.jpg);
+}
+#archmage-alfie {
+  background-image: url(./images/archmage_alfie.jpg);
+}
+#moneybags-michael {
+  background-image: url(./images/moneybags_michael.jpg);
+}
 
 .application {
   margin-bottom: 9px;
