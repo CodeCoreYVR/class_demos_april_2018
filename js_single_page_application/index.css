@@ -1,0 +1,7 @@
+main .page {
+  display: none;
+}
+
+main .page.visible {
+  display: block;
+}
