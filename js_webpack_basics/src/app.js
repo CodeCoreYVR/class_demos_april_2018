@@ -17,5 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const bear = document.createElement("img");
   bear.src = bearImg;
 
+  const thing = document.createElement("div");
+
+  thing.innerHTML = `
+    <h1>This is so fast! 🏃‍♂️💨</h1>
+  `;
+
+  document.body.prepend(thing);
   document.body.append(bear);
 });
