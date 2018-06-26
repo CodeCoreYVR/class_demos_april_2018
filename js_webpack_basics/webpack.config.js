@@ -26,5 +26,30 @@ module.exports = {
     // You can use [name] in the `filename` to interpolate
     // the name of entry file `app` in this case.
     filename: "[name]_bundle.js"
+  },
+  module: {
+    // We configure rules for importing modules
+    // as an array of objects.
+    rules: [
+      // A rule usually include a `test` which
+      // a regular expression that used to check
+      // what kind of file is being imported.
+      {
+        // The test below will tell Webpack
+        // that file ends in .png, .jpg or .gif
+        // should be loaded by "file-loader".
+        test: /\.(png|jpg|gif)$/,
+        // A `loader` is package that we install
+        // that tells how to process files other
+        // that JavaScript.
+        loader: "file-loader",
+        // Every loader will have its set of options.
+        // You can specify with the `option` property
+        // is a module rule.
+        options: {
+          outputPath: "images/"
+        }
+      }
+    ]
   }
 };
