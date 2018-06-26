@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 // Node's module style (i.e. require and module.exports)
 // because this file is not processed by Webpack.
 module.exports = {
-  mode: "development",
   // You can specify entry in multiples ways.
   // entry: "./src/index.js"
   // There can be multiple per project.
