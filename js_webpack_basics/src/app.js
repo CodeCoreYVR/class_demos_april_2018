@@ -1,6 +1,7 @@
 import "./styles/main.css";
 import "./hola";
 import "./yo";
+import "./react-demo";
 
 // Importing images will only work if
 // "file-loader" installed and setup.

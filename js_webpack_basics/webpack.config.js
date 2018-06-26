@@ -32,6 +32,19 @@ module.exports = {
     // We configure rules for importing modules
     // as an array of objects.
     rules: [
+      {
+        // To use babel with webpack, we have to
+        // install loader for JavaScript. This will
+        // process JavaScript babel. Ultimately adding
+        // support for JSX and modern JavaScript in this case.
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        // Use `exclude` with a regular expression like `test`
+        // to specify files to be ignored. In this case, we
+        // ignore all files from the `node_modules/`, because
+        // babel should only process our own files.
+        loader: "babel-loader"
+      },
       // A rule usually include a `test` which
       // a regular expression that used to check
       // what kind of file is being imported.
