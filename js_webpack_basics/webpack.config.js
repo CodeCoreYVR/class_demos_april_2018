@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 // When writing a Webpack config, we must use
 // Node's module style (i.e. require and module.exports)
@@ -64,5 +65,10 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "💁🏻‍♀️Webpack Demo"
+    })
+  ]
 };
